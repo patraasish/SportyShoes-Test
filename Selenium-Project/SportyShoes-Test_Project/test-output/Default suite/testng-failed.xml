@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.sportyshoes.testpages.SportyShoesPageTest">
+        <methods>
+          <include name="Add_To_Cart"/>
+          <include name="generateTestStatus"/>
+          <include name="Open_Browser"/>
+          <include name="close_Browser"/>
+          <include name="InitalizeExtentReport"/>
+          <include name="generateReports"/>
+          <include name="Place_Order"/>
+        </methods>
+      </class> <!-- com.sportyshoes.testpages.SportyShoesPageTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

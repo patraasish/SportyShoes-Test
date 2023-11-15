@@ -1,0 +1,8 @@
+<suite name="SportyShoesTest">
+	<test name="sportyshoes001">
+		<classes>
+			<class name="com.sportyshoes.testpages.SportyShoesPageTest">
+			</class>
+		</classes>
+	</test>
+</suite>

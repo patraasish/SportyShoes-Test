@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "f7b8a20c-6eec-4238-8fc1-76ac28884c7a",
+		"name": "SportyShoes-API-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23404772"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/get-shoes",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"get-shoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Register Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/get-users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"get-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message Verify\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"SampleShoe Added Successfully.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/add-shoe?id=101&image=image_url&name=SampleShoe&category=Running&sizes=9&price=1000",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"add-shoe"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "101"
+						},
+						{
+							"key": "image",
+							"value": "image_url"
+						},
+						{
+							"key": "name",
+							"value": "SampleShoe"
+						},
+						{
+							"key": "category",
+							"value": "Running"
+						},
+						{
+							"key": "sizes",
+							"value": "9"
+						},
+						{
+							"key": "price",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Update Message verify\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Updated Shoe Name Updated Successfully\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9010/update-shoe?id=101&image=updated_image_url&name=Updated Shoe Name&category=Updated Category&sizes=10&price=1500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"update-shoe"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "101"
+						},
+						{
+							"key": "image",
+							"value": "updated_image_url"
+						},
+						{
+							"key": "name",
+							"value": "Updated Shoe Name"
+						},
+						{
+							"key": "category",
+							"value": "Updated Category"
+						},
+						{
+							"key": "sizes",
+							"value": "10"
+						},
+						{
+							"key": "price",
+							"value": "1500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9010/delete-shoe?id=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"delete-shoe"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
